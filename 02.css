@@ -1,0 +1,49 @@
+
+body{
+    background-color:#eee;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  height:100vh;
+}
+.swing{
+    animation:swing ease-in-out 2s infinite alternate;
+    transform-origin: center -20px;
+    float:left;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    display:flex;
+}
+.swing::after{
+    content:"";
+    position: absolute;
+    width:20px;
+    height:20px;
+    border:2px solid #999;
+    left:50%;
+    top:-10px;
+    border-bottom:none;
+    border-right:none;
+    transform: rotate(45deg);
+}
+.swing::before{
+    content:"";
+    position:absolute;
+    width:5px;
+    height:5px;
+    top:-14px;
+    left:54%;
+    border-radius:50% 50%;
+    background:rgb(0, 0, 0);
+}
+.swing img{
+    border:5px solid #f8f8f8;
+    display:inline-block;
+}
+@keyframes swing{
+    0%{
+        transform:rotate(20deg);
+    }
+    100%{
+        tranform:rotate(-20deg);
+    }
+}
